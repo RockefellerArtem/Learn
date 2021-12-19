@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MathLogicCalculater : MonoBehaviour
 {
-    [SerializeField] private GameObject _logger;
-    private Logger _debugLog;
+    private Logger _logger;
 
     [SerializeField] private int _number1;
     [SerializeField] private int _number2;
@@ -14,10 +13,10 @@ public class MathLogicCalculater : MonoBehaviour
 
     private void Awake()
     {
-        _debugLog = _logger.GetComponent<Logger>();
+        _logger = GetComponent<Logger>();
 
         _num = _number1 + _number2;
 
-        _debugLog.Log(_num.ToString());
+        _logger.Log(_num.ToString());
     }
 }
